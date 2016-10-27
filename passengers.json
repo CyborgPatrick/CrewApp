@@ -1,0 +1,70 @@
+{
+	"id": "1",
+	"atype": "Boeing 747",
+	"seatmap": "cabin",
+	"passengers":
+	[
+	{
+	"seat_column":"11",
+	"seat_row":"B",
+	"passenger":
+	{
+	"first_name": "Homer", 
+	"last_name": "Simpson",
+	"age":"60",
+	"birthday": "1001", 
+	"nationality": "American", 
+	"language": "English",
+	"SSR":[
+	{"id":"1","text":"Vegan meal"},
+	{"id":"2","text":"Wheelchair"},
+	{"id":"1","text":"Vegan meal"},
+	{"id":"2","text":"Wheelchair"},
+	{"id":"1","text":"Vegan meal"},
+	{"id":"2","text":"Wheelchair"},
+	{"id":"1","text":"Vegan meal"},
+	{"id":"2","text":"Wheelchair"},
+	{"id":"1","text":"Vegan meal"},
+	{"id":"2","text":"Wheelchair"}
+	],
+	"Anchillaries":
+	[
+	{"id":"1","text":"WiFi"},
+	{"id":"2","text":"Extra baggage"}
+	]
+
+	}
+
+	},
+	{
+	"seat_column":"12",
+	"seat_row":"D",
+	"passenger":
+	{
+	"first_name": "Lisa", 
+	"last_name": "Simpson",
+	"age":"13",
+	"birthday": "1001", 
+	"nationality": "American", 
+	"language": "English",
+	"SSR":[
+	{"id":"1","text":"Vegan meal"},
+	{"id":"2","text":"Vegan meal"}
+	],
+	"Anchillaries":
+	[
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"},
+	{"id":"1","text":"WiFi"}
+	]
+
+	}
+
+	}
+	]
+}

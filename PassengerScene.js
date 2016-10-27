@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableHighlight, Image, StyleSheet, ScrollView } from 'react-native';
 
-var customData = require('./passengers.json');
-
 export default class PassengerScene extends Component {
 
   render() {
@@ -39,13 +37,13 @@ export default class PassengerScene extends Component {
           </View>
         </View>
         <Text style={styles.fieldValue}>Special services</Text>
-        <View style={styles.container}>{customData.passengers[0].passenger.SSR.map(function(item,i){
+        <View style={styles.container}>{psInfo.SSR.map(function(item,i){
                                        return (<PaxSSR SSR={item} key={i}/>)
                                    })}
                 </View>
         <Text style={styles.fieldValue}>Ancillaries</Text>
         <View>
-        {customData.passengers[0].passenger.Ancillaries.map(function(item,i){
+        {psInfo.Ancillaries.map(function(item,i){
                                                return (<PaxAncillaries Ancillaries={item} key={i}/>)
                                            })}
         </View>

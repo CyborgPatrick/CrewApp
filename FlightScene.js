@@ -11,7 +11,7 @@ var styles = StyleSheet.create({
     }
 });
 
-var passengers = require('./passengers.json');
+var data = require('./passengers.json');
 
 export default class FlightScene extends Component {
   _navigate() {
@@ -19,7 +19,7 @@ export default class FlightScene extends Component {
     this.props.navigator.push({
       name: 'PassengerScene',
       passProps: {
-        passenger: passengers.passengers[0]
+        passenger: data.passengers[0]
       }
     })
   }

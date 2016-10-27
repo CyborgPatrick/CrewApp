@@ -7,10 +7,10 @@ import PassengerScene from './PassengerScene';
 class CrewApp extends Component {
   renderScene(route, navigator) {
     if(route.name == 'FlightScene') {
-      return <FlightScene navigator={navigator} />
+      return <FlightScene navigator={navigator} {...route.passProps}/>
     }
     if(route.name == 'PassengerScene') {
-      return <PassengerScene navigator={navigator} />
+      return <PassengerScene navigator={navigator} {...route.passProps}/>
     }
   }
 

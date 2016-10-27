@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableHighlight, Image, StyleSheet, ScrollView } from 'react-native';
 
+var customData = require('./passengers.json');
+
 export default class PassengerScene extends Component {
 
   render() {
@@ -34,6 +36,17 @@ export default class PassengerScene extends Component {
             <Image style={styles.image} source={require('./img/personIcon.png')} />
           </View>
         </View>
+        <Text style={styles.fieldValue}>Special services</Text>
+        <View style={styles.container}>{customData.passengers[0].passenger.SSR.map(function(item,i){
+                                       return (<PaxSSR SSR={item} key={i}/>)
+                                   })}
+                </View>
+        <Text style={styles.fieldValue}>Ancillaries</Text>
+        <View>
+        {customData.passengers[0].passenger.Ancillaries.map(function(item,i){
+                                               return (<PaxAncillaries Ancillaries={item} key={i}/>)
+                                           })}
+        </View>
       </ScrollView>
     )
   }
@@ -50,6 +63,17 @@ class PassengerTextField extends Component {
   }
 }
 
+class PaxSSR extends Component{
+    render(){
+		return(<Text>{this.props.SSR.text}</Text>);
+    }
+}
+
+class PaxAncillaries extends Component{
+    render(){
+		return(<Text>{this.props.Ancillaries.text}</Text>);
+    }
+}
 //Require not working properly with passed props, figure out later
 /*class AdditionalInfoIcon extends Component {
   render() {
@@ -69,6 +93,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+   bottomHeaders: {
+      paddingTop:15,
+      fontSize: 20,
+      fontWeight: 'bold',
+    },
   rowContainer: {
     flex: 1, 
     flexDirection: 'row'

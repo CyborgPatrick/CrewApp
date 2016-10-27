@@ -11,12 +11,15 @@ var styles = StyleSheet.create({
     }
 });
 
+var passengers = require('./passengers.json');
+
 export default class FlightScene extends Component {
   _navigate() {
+
     this.props.navigator.push({
       name: 'PassengerScene',
       passProps: {
-        prop1: 'Poopie'
+        passenger: passengers.passengers[0]
       }
     })
   }
@@ -25,7 +28,7 @@ export default class FlightScene extends Component {
     return (
       <ScrollView>
         <TouchableHighlight onPress={ () => this._navigate() }>
-            <Image style={styles.image} source={require('./img/seatmap2.jpg')} />
+            <Image style={styles.image} source={require('./img/seatmap.jpg')} />
         </TouchableHighlight>
       </ScrollView>
     )

@@ -4,24 +4,26 @@ import { View, Text, TouchableHighlight, Image, StyleSheet, ScrollView } from 'r
 export default class PassengerScene extends Component {
 
   render() {
+    var passenger = this.props.passenger;
+    var psInfo = passenger.passenger;
     return (
       <ScrollView>
         <TouchableHighlight style={{paddingTop:20}} onPress={ () => this.props.navigator.pop() }>
           <Text>GO Back</Text>
         </TouchableHighlight>
         <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Title" fieldValue="Mr."/>
-          <PassengerTextField fieldInfo="FirstName" fieldValue="Tómas"/>
-          <PassengerTextField fieldInfo="LastName" fieldValue="Mate"/>
-          <PassengerTextField fieldInfo="Seat#" fieldValue="11A"/>
+          <PassengerTextField fieldInfo="Title" fieldValue={psInfo.title}/>
+          <PassengerTextField fieldInfo="FirstName" fieldValue={psInfo.first_name}/>
+          <PassengerTextField fieldInfo="LastName" fieldValue={psInfo.last_name}/>
+          <PassengerTextField fieldInfo="Seat#" fieldValue={passenger.seat_row + passenger.seat_column}/>
         </View>
         <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Age" fieldValue="27"/>
-          <PassengerTextField fieldInfo="Birthday" fieldValue="8. march 1989"/>
+          <PassengerTextField fieldInfo="Age" fieldValue={psInfo.age}/>
+          <PassengerTextField fieldInfo="Birthday" fieldValue={psInfo.birthday}/>
         </View>
         <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Nationality" fieldValue="Icelandic"/>
-          <PassengerTextField fieldInfo="Language" fieldValue="Esperanto"/>
+          <PassengerTextField fieldInfo="Nationality" fieldValue={psInfo.nationality}/>
+          <PassengerTextField fieldInfo="Language" fieldValue={psInfo.language}/>
         </View>
         <View style={styles.rowContainer, styles.iconContainer}>
           <View style={styles.container, styles.centerInParent}>

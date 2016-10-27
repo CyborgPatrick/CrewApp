@@ -5,6 +5,7 @@ import FlightScene from './FlightScene';
 import PassengerScene from './PassengerScene';
 
 class CrewApp extends Component {
+
   renderScene(route, navigator) {
     if(route.name == 'FlightScene') {
       return <FlightScene navigator={navigator} {...route.passProps}/>

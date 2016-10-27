@@ -4,8 +4,8 @@
 	"seatmap": "cabin",
 	"passengers": [
 		{
-			"seat_column": "11",
-			"seat_row": "B",
+			"seat_column": "B",
+			"seat_row": "11",
 			"passenger": {
 				"first_name": "Homer",
 				"last_name": "Simpson",
@@ -69,8 +69,8 @@
 			}
 		},
 		{
-			"seat_column": "12",
-			"seat_row": "D",
+			"seat_column": "D",
+			"seat_row": "12",
 			"passenger": {
 				"first_name": "Lisa",
 				"last_name": "Simpson",

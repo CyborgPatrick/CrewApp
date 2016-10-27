@@ -16,6 +16,7 @@ export default class FlightScene extends Component {
     this.props.navigator.push({
       name: 'PassengerScene',
       passProps: {
+        prop1: 'Poopie'
       }
     })
   }
@@ -24,7 +25,7 @@ export default class FlightScene extends Component {
     return (
       <ScrollView>
         <TouchableHighlight onPress={ () => this._navigate() }>
-            <Image style={styles.image} source={require('./img/seatmap1.jpg')} />
+            <Image style={styles.image} source={require('./img/seatmap2.jpg')} />
         </TouchableHighlight>
       </ScrollView>
     )

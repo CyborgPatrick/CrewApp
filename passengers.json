@@ -11,6 +11,7 @@
 	{
 	"first_name": "Homer", 
 	"last_name": "Simpson",
+	"title":"Mr",
 	"age":"60",
 	"birthday": "1001", 
 	"nationality": "American", 
@@ -43,6 +44,7 @@
 	{
 	"first_name": "Lisa", 
 	"last_name": "Simpson",
+	"title":"Mrs"
 	"age":"13",
 	"birthday": "1001", 
 	"nationality": "American", 

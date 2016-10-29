@@ -12,19 +12,24 @@ export default class PassengerScene extends Component {
           <Text>GO Back</Text>
         </TouchableHighlight>
         <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Title" fieldValue={psInfo.title}/>
-          <PassengerTextField fieldInfo="FirstName" fieldValue={psInfo.first_name}/>
-          <PassengerTextField fieldInfo="LastName" fieldValue={psInfo.last_name}/>
-          <PassengerTextField fieldInfo="Seat#" fieldValue={passenger.seat_row + passenger.seat_column}/>
+          <View style={styles.rowContainer}>
+            <PassengerTextField fieldInfo="Title" fieldValue={psInfo.title}/>
+            <PassengerTextField fieldInfo="FirstName" fieldValue={psInfo.first_name}/>
+            <PassengerTextField fieldInfo="LastName" fieldValue={psInfo.last_name}/>
+            <PassengerTextField fieldInfo="Seat#" fieldValue={passenger.seat_row + passenger.seat_column}/>
+          </View>
+
+          <View style={styles.rowContainer}>
+            <PassengerTextField fieldInfo="Age" fieldValue={psInfo.age}/>
+            <PassengerTextField fieldInfo="Birthday" fieldValue={psInfo.birthday}/>
+          </View>
+
+          <View style={styles.rowContainer}>
+            <PassengerTextField fieldInfo="Nationality" fieldValue={psInfo.nationality}/>
+            <PassengerTextField fieldInfo="Language" fieldValue={psInfo.language}/>
+          </View>
         </View>
-        <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Age" fieldValue={psInfo.age}/>
-          <PassengerTextField fieldInfo="Birthday" fieldValue={psInfo.birthday}/>
-        </View>
-        <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Nationality" fieldValue={psInfo.nationality}/>
-          <PassengerTextField fieldInfo="Language" fieldValue={psInfo.language}/>
-        </View>
+
         <View style={styles.rowContainer, styles.iconContainer}>
           <View style={styles.container, styles.centerInParent}>
             <Image style={styles.image} source={require('./img/airplaneIcon.png')} />
@@ -36,6 +41,7 @@ export default class PassengerScene extends Component {
             <Image style={styles.image} source={require('./img/personIcon.png')} />
           </View>
         </View>
+
         <Text style={styles.fieldValue}>Special services</Text>
         <View style={styles.container}>{psInfo.SSR.map(function(item,i){
                                        return (<PaxSSR SSR={item} key={i}/>)

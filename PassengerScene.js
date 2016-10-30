@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, TouchableHighlight, Image, StyleSheet, ScrollView } from 'react-native';
 
+var Dimensions = require('Dimensions');
+var windowSize = Dimensions.get('window');
+
 export default class PassengerScene extends Component {
 
   render() {
@@ -13,18 +16,20 @@ export default class PassengerScene extends Component {
             <Text style={styles.button}>GO Back</Text>
           </View>
         </TouchableHighlight>
-        <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Name" fieldValue={psInfo.title + " " + psInfo.first_name + " " + psInfo.last_name}/>
-        </View>
-        <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Age" fieldValue={psInfo.age}/>
-          <PassengerTextField fieldInfo="Birthday" fieldValue={psInfo.birthday}/>
-                    <PassengerTextField fieldInfo="Seat #" fieldValue={passenger.seat_row + passenger.seat_column}/>
+        <View>
+          <View style={styles.rowContainer}>
+            <PassengerTextField fieldInfo="Name" fieldValue={psInfo.title + " " + psInfo.first_name + " " + psInfo.last_name}/>
+          </View>
+          <View style={styles.rowContainer}>
+            <PassengerTextField fieldInfo="Age" fieldValue={psInfo.age}/>
+            <PassengerTextField fieldInfo="Birthday" fieldValue={psInfo.birthday}/>
+                      <PassengerTextField fieldInfo="Seat #" fieldValue={passenger.seat_row + passenger.seat_column}/>
 
-        </View>
-        <View style={styles.rowContainer}>
-          <PassengerTextField fieldInfo="Nationality" fieldValue={psInfo.nationality}/>
-          <PassengerTextField fieldInfo="Language" fieldValue={psInfo.language}/>
+          </View>
+          <View style={styles.rowContainer}>
+            <PassengerTextField fieldInfo="Nationality" fieldValue={psInfo.nationality}/>
+            <PassengerTextField fieldInfo="Language" fieldValue={psInfo.language}/>
+          </View>
         </View>
 
         <View style={styles.rowContainer, styles.iconContainer}>
@@ -55,6 +60,9 @@ export default class PassengerScene extends Component {
                 </View>
             </View>
         </View>
+        <View style={styles.footer}>
+            <Image style={styles.footerLogo} source={require('./img/sabre-logo-white.png')} />
+        </View>
       </ScrollView>
     )
   }
@@ -82,6 +90,7 @@ class PaxAncillaries extends Component{
 		return(<Text>{this.props.Ancillaries.text}</Text>);
     }
 }
+
 //Require not working properly with passed props, figure out later
 /*class AdditionalInfoIcon extends Component {
   render() {
@@ -101,9 +110,6 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         padding:5,
         margin:5
-        },
-    scrollView:{
-    padding:1
     },
   fieldInfo: {
     fontSize: 10,
@@ -139,13 +145,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     justifyContent: 'space-between', 
     paddingHorizontal: 30,
-    paddingVertical: 20
+    paddingVertical: 20,
+    backgroundColor: '#E4E4E4'
+
   },
   listBoxContainer:{
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingHorizontal: 20,
-      paddingVertical: 10
+      paddingVertical: 10,
+      backgroundColor: '#EA3434'
+  },
+  footer:{
+    backgroundColor: '#EA3434'
+  },
+  footerLogo:{
+    width: windowSize.width,
+    height: 150
   }
 });
 

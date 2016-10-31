@@ -11,7 +11,7 @@
 				"last_name": "Simpson",
 				"title": "Mr",
 				"age": "60",
-				"birthday": "10011982",
+				"birthday": "1956-05-12",
 				"nationality": "American",
 				"language": "English",
 				"SSR": [
@@ -34,26 +34,6 @@
 					{
 						"id": "1",
 						"text": "Vegan meal"
-					},
-					{
-						"id": "2",
-						"text": "Wheelchair"
-					},
-					{
-						"id": "1",
-						"text": "Vegan meal"
-					},
-					{
-						"id": "2",
-						"text": "Wheelchair"
-					},
-					{
-						"id": "1",
-						"text": "Vegan meal"
-					},
-					{
-						"id": "2",
-						"text": "Wheelchair"
 					}
 				],
 				"Ancillaries": [
@@ -76,7 +56,7 @@
 				"last_name": "Simpson",
 				"title": "Mrs",
 				"age": "13",
-				"birthday": "10011985",
+				"birthday": "2015-10-12",
 				"nationality": "American",
 				"language": "English",
 				"SSR": [

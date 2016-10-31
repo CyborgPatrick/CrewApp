@@ -3,6 +3,7 @@ import { View, Text, TouchableHighlight, Image, StyleSheet, ScrollView } from 'r
 
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
+var Platform = require('Platform');
 
 export default class PassengerScene extends Component {
 
@@ -10,22 +11,27 @@ export default class PassengerScene extends Component {
     var passenger = this.props.passenger;
     var psInfo = passenger.passenger;
     return (
-      <ScrollView style={styles.scrollView}>
+      <ScrollView>
         <TouchableHighlight style={{paddingTop:20}} onPress={ () => this.props.navigator.pop() }>
           <View>
             <Text style={styles.button}>GO Back</Text>
           </View>
         </TouchableHighlight>
-        <View>
+
+        <View style={styles.paxInfoContainer}>
           <View style={styles.rowContainer}>
-            <PassengerTextField fieldInfo="Name" fieldValue={psInfo.title + " " + psInfo.first_name + " " + psInfo.last_name}/>
+            <View style={styles.paxName}>
+              <Text style={styles.fieldInfo}>Name</Text>
+              <Text style={styles.fieldValue}>{psInfo.title + " " + psInfo.first_name + " " + psInfo.last_name}</Text>
+            </View>
+            <PassengerTextField fieldInfo="Seat #" fieldValue={passenger.seat_row + passenger.seat_column}/>
           </View>
+
           <View style={styles.rowContainer}>
             <PassengerTextField fieldInfo="Age" fieldValue={psInfo.age}/>
             <PassengerTextField fieldInfo="Birthday" fieldValue={psInfo.birthday}/>
-                      <PassengerTextField fieldInfo="Seat #" fieldValue={passenger.seat_row + passenger.seat_column}/>
-
           </View>
+
           <View style={styles.rowContainer}>
             <PassengerTextField fieldInfo="Nationality" fieldValue={psInfo.nationality}/>
             <PassengerTextField fieldInfo="Language" fieldValue={psInfo.language}/>
@@ -43,16 +49,17 @@ export default class PassengerScene extends Component {
             <Image style={styles.image} source={require('./img/personIcon.png')} />
           </View>
         </View>
+
         <View style={styles.rowContainer, styles.listBoxContainer}>
             <View style={styles.container, styles.startInParent}>
-                <Text style={styles.fieldValue}>Special services</Text>
+                <Text style={styles.ssrFieldTitle}>Special services</Text>
                 <View>{psInfo.SSR.map(function(item,i){
                                                return (<PaxSSR SSR={item} key={i}/>)
                                            })}
                 </View>
             </View>
             <View style={styles.container, styles.startInParent}>
-                <Text style={styles.fieldValue}>Ancillaries</Text>
+                <Text style={styles.ssrFieldTitle}>Ancillaries</Text>
                         <View>
                         {psInfo.Ancillaries.map(function(item,i){
                                                                return (<PaxAncillaries Ancillaries={item} key={i}/>)
@@ -81,13 +88,13 @@ class PassengerTextField extends Component {
 
 class PaxSSR extends Component{
     render(){
-		return(<Text>{this.props.SSR.text}</Text>);
+		return(<Text style={styles.ssrText}>{this.props.SSR.text}</Text>);
     }
 }
 
 class PaxAncillaries extends Component{
     render(){
-		return(<Text>{this.props.Ancillaries.text}</Text>);
+		return(<Text style={styles.ssrText}>{this.props.Ancillaries.text}</Text>);
     }
 }
 
@@ -104,6 +111,7 @@ class PaxAncillaries extends Component{
 
 const styles = StyleSheet.create({
     button:{
+      fontFamily: (Platform.OS === 'ios') ? 'Helvetica Neue' : 'Roboto',
         borderRadius: 4,
         borderWidth: 0.5,
         width:120,
@@ -112,23 +120,19 @@ const styles = StyleSheet.create({
         margin:5
     },
   fieldInfo: {
+    fontFamily: (Platform.OS === 'ios') ? 'Helvetica Neue' : 'Roboto',
     fontSize: 10,
   },
   fieldValue: {
+    fontFamily: (Platform.OS === 'ios') ? 'Helvetica Neue' : 'Roboto',
     fontSize: 20,
-    fontWeight: 'bold',
   },
-   bottomHeaders: {
-      paddingTop:15,
-      fontSize: 20,
-      fontWeight: 'bold',
-    },
   rowContainer: {
     flex: 1, 
     flexDirection: 'row'
   },
   container: {
-    padding: 5,
+    paddingVertical: 5,
     flex: 1
   },
   image: {
@@ -162,6 +166,25 @@ const styles = StyleSheet.create({
   footerLogo:{
     width: windowSize.width,
     height: 150
+  },
+  paxName:{
+    paddingVertical: 5,
+    width: windowSize.width*0.7
+  },
+  paxInfoContainer: {
+    padding: 20
+  },
+  ssrFieldTitle: {
+    fontFamily: (Platform.OS === 'ios') ? 'Helvetica Neue' : 'Roboto',
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingVertical: 10
+  },
+  ssrText: {
+    fontFamily: (Platform.OS === 'ios') ? 'Helvetica Neue' : 'Roboto',
+    color: 'white',
+    padding: 3
   }
 });
 

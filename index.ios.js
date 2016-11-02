@@ -3,6 +3,7 @@ import { AppRegistry, Navigator, Text, View } from 'react-native';
 
 import FlightScene from './FlightScene';
 import PassengerScene from './PassengerScene';
+import PassengerItineraryScene from './PassengerItineraryScene';
 
 class CrewApp extends Component {
 
@@ -12,6 +13,9 @@ class CrewApp extends Component {
     }
     if(route.name == 'PassengerScene') {
       return <PassengerScene navigator={navigator} {...route.passProps}/>
+    }
+    if(route.name == 'PassengerItineraryScene') {
+      return <PassengerItineraryScene navigator={navigator} {...route.passProps}/>
     }
   }
 

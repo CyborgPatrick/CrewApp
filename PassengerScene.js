@@ -7,6 +7,16 @@ var Platform = require('Platform');
 
 export default class PassengerScene extends Component {
 
+    _navigateToItineraryScene() {
+
+    this.props.navigator.push({
+      name: 'PassengerItineraryScene',
+      passProps: {
+        paxItinerary: this.props.passenger.passenger.Itinerary
+      }
+    })
+  }
+
   render() {
     var passenger = this.props.passenger;
     var psInfo = passenger.passenger;
@@ -40,7 +50,9 @@ export default class PassengerScene extends Component {
 
         <View style={styles.rowContainer, styles.iconContainer}>
           <View style={styles.container, styles.centerInParent}>
-            <Image style={styles.image} source={require('./img/airplaneIcon.png')} />
+            <TouchableHighlight onPress={ () => this._navigateToItineraryScene() }>
+              <Image style={styles.image} source={require('./img/airplaneIcon.png')} />
+            </TouchableHighlight>  
           </View>
           <View style={styles.container, styles.centerInParent}>
             <Image style={styles.image} source={require('./img/baggageIcon.png')} />

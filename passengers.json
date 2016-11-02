@@ -45,6 +45,16 @@
 						"id": "2",
 						"text": "Extra baggage"
 					}
+				],
+				"Itinerary":[
+					{
+						"origin": "KEF",
+						"destination": "LHR"
+					},
+					{
+						"origin": "LHR",
+						"destination": "AUH"
+					}
 				]
 			}
 		},
@@ -101,6 +111,16 @@
 					{
 						"id": "1",
 						"text": "WiFi"
+					}
+				],
+				"Itinerary":[
+					{
+						"origin": "KEF",
+						"destination": "LHR"
+					},
+					{
+						"origin": "LHR",
+						"destination": "AUH"
 					}
 				]
 			}
